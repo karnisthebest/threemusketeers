@@ -14,7 +14,7 @@ import { Storage } from '@ionic/storage';
 
 
 export class MyApp {
-  rootPage:any = "OrderOrderPage";
+  rootPage:any = "ButtonsPage";
   //rootPage:any = "LoginPage";
   
 

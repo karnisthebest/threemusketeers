@@ -38,7 +38,7 @@ import { DateServiceProvider } from '../providers/date-service/date-service';
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage
+    //TabsPage
     
     //OrderPage
     //LoginPage,
@@ -74,7 +74,7 @@ import { DateServiceProvider } from '../providers/date-service/date-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TabsPage//,
+   // TabsPage//,
     //LoginPage,
     //RegisterPage,
     //AboutPage,

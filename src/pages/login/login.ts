@@ -32,33 +32,8 @@ export class LoginPage {
   }
   logo: any = {pic:"../../assets/imgs/logo_mystore.png"};
   public login() {
-    this.showLoading();
-    this.auth.login(this.registerCredentials).subscribe(
-      value => {
-        if (value.access) {
-          console.log('001',value);
 
-          this.navCtrl.setRoot(TabsPage);
-        }
-        else if (localStorage.getItem('User_Token') == this.auth.token) {
-          console.log('002',value);
-
-          this.navCtrl.setRoot(TabsPage);
-        }
-        else {
-          console.log('003',value);
-          this.auth.LoginSubscribe.unsubscribe();
-          this.showError("These credentials do not match our records.");
-
-        }
-      },
-      error => {
-        console.error(error.message)
-      },
-      () => console.log('Completed!')
-    )
-
-
+    this.navCtrl.setRoot("TabsPage");
   }
 
 
@@ -84,6 +59,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+    this.navCtrl.setRoot("TabsPage");
     //console.log('ionViewDidLoad LoginPage');
   }
 

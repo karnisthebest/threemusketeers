@@ -6,14 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>customer</ion-title>
+  <ion-navbar color="primary">
+    <ion-title color="light">customer</ion-title>
   </ion-navbar>
+
+
   <ion-searchbar
   [(ngModel)]="varfilterall.filter"
   [showCancelButton]="shouldShowCancel"
   (ionInput)="filterall()"
-  (ionCancel)="onCancel($event)">
+  (ionCancel)="onCancel($event)"></ion-searchbar>
   <button ion-button [navPush]="FilterPage"></button>
 </ion-header>
 

@@ -27,6 +27,11 @@ export class CustomerPage {
 
   }
 
+  varfilterall: any;
+  shouldShowCancel: any;
+  FilterPage: any;
+  filtered: any;
+  order: any;
     
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -44,4 +49,19 @@ export class CustomerPage {
     console.log('ionViewDidLoad CustomerPage');
   }
 
+  filterall(){
+
+  }
+
+  onCancel($event){
+
+  }
+
+  ViewDetail(x,y){
+
+  }
+
+  slideclose(){
+
+  }
 }

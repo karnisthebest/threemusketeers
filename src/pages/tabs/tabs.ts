@@ -18,6 +18,6 @@ export class TabsPage {
     
   }
   logout() {
-    this.appCtrl.getRootNav().setRoot("LoginPage");
+    this.appCtrl.getRootNav().setRoot("HomePage");
   }
 }

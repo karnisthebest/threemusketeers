@@ -83,6 +83,7 @@ export class BarPage {
     console.log('ionViewDidLoad BarPage');
   }
 
+  adddata(){}
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }

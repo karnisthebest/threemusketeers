@@ -132,7 +132,7 @@ export class AuthServiceProvider {
       this.logout().subscribe(succ => {
         //this.navCtrl.setRoot(LoginPage);
         this.appCtrl.getRootNav().setRoot("LoginPage");
-        return false;
+        return true;
       });
     }
     return true;

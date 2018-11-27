@@ -62,7 +62,7 @@ export class DoughnutPage {
   }
 
 
-
+  adddata(){}
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
