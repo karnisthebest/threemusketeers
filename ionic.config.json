@@ -1,0 +1,8 @@
+{
+  "name": "ClientMobileApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "07ac42d2"
+}

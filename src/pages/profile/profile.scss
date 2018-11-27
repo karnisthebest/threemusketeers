@@ -1,0 +1,33 @@
+page-profile {
+    .user-photo ion-avatar {
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+      }
+
+      #myname{
+        text-align: center;
+      }
+    
+      
+      ion-list {
+        margin-top: 24px;
+        .p {
+          font-size: 12px;
+          font-weight: 400;
+          padding-bottom: 4px;
+          color: red;
+        
+        };
+        h2 {
+          font-weight: 400;
+          opacity: .5;
+        }
+        .reds{
+            color: red;
+        }
+
+        
+      }
+}
+

@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Order</ion-title>
+  </ion-navbar>
+  <ion-searchbar
+  [(ngModel)]="varfilterall.filter"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="filterall()"
+  (ionCancel)="onCancel($event)">
+  <button ion-button [navPush]="FilterPage"></button>
+  </ion-searchbar>
+  
+  <!-- Segment in content -->
+  <ion-segment [(ngModel)]="varfilterall.order" color="primary" (ionChange)="filterall($event)">
+    <ion-segment-button value="Ascending">
+        Ascending
+    </ion-segment-button>
+    <ion-segment-button value="Descending">
+        Descending
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+<div class="mycard">
+
+<ion-list>
+  <ion-item-sliding #itemsliding *ngFor="let merchandise of filtered; let i = index;">
+  <ion-item (click)="ViewDetail('MerchandiseDetailPage',merchandise)">
+    <ion-thumbnail item-start>
+      <img src="../../assets/imgs/1.jpg">
+    </ion-thumbnail>
+    <h2>{{merchandise.merchandiseName}}</h2>
+    <p>{{merchandise.merchandiseId}}</p>
+    <p>{{merchandise.merchandiseQTY}}</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
+  <ion-item-options side="right">
+      <button ion-button (click)="ViewDetail('OrderDetailPage',order);slideclose(itemsliding);"><ion-icon class="icon" name="menu"></ion-icon></button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</div>
+
+</ion-content>

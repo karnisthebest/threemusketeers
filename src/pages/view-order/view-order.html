@@ -1,0 +1,125 @@
+<!--
+  Generated template for the ProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Order</ion-title>
+  </ion-navbar>
+  <ion-searchbar
+  [(ngModel)]="varfilterall.filter"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="filterall()"
+  (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <!-- Segment in content -->
+  <ion-segment [(ngModel)]="varfilterall.order" color="primary" (ionChange)="filterall($event)">
+    <ion-segment-button value="Ascending">
+        Ascending
+    </ion-segment-button>
+    <ion-segment-button value="Descending">
+        Descending
+    </ion-segment-button>
+  </ion-segment>
+  <ion-segment [(ngModel)]="varfilterall.range" (ionChange)="filterall($event)">
+      <ion-segment-button value="today">Today</ion-segment-button>
+      <ion-segment-button value="week">This Week</ion-segment-button>
+      <ion-segment-button value="all">All</ion-segment-button>
+  </ion-segment>
+  <ion-segment [(ngModel)]="varfilterall.orderIsCanceled" (ionChange)="filterall($event)">
+      <ion-segment-button value="false">Not Canceled</ion-segment-button>
+      <ion-segment-button value="true">Canceled</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+
+<ion-content>
+<button (click)="ChipClick(1)">fefefefef</button>
+<ion-card>
+<div>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <button ion-button clear color="dark" (click)="ChipClick('0')">
+                  <ion-chip #chip3 color="secondary" *ngIf="Chips['chip0']" >
+                      <ion-avatar>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                      </ion-avatar>
+                      <ion-label>With Avatar</ion-label>
+                    </ion-chip>
+                  </button>
+          </ion-col>
+          <ion-col>
+              <ion-chip #chip3>
+                  <ion-avatar>
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>With Avatar</ion-label>
+                  <button ion-button clear color="dark" (click)="delete(chip3)">
+                    <ion-icon name="close-circle"></ion-icon>
+                  </button>
+                </ion-chip>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-chip #chip3>
+                  <ion-avatar>
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>With Avatar</ion-label>
+                  <button ion-button clear color="dark" (click)="delete(chip3)">
+                    <ion-icon name="close-circle"></ion-icon>
+                  </button>
+                </ion-chip>
+          </ion-col>
+          <ion-col>
+              <ion-chip #chip3>
+                  <ion-avatar>
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+                  </ion-avatar>
+                  <ion-label>With Avatar</ion-label>
+                  <button ion-button clear color="dark" (click)="delete(chip3)">
+                    <ion-icon name="close-circle"></ion-icon>
+                  </button>
+                </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</div>
+</ion-card>
+
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<div class="mycard">
+<ion-list>
+
+
+    <ion-item-sliding #itemsliding *ngFor="let order of filtered; let i = index;">
+      <ion-item (click)="ViewDetail('OrderDetailPage',order)">
+          <ion-thumbnail item-start>
+              <img src="../../assets/imgs/1.jpg">
+            </ion-thumbnail>
+          <h2>{{order.orderId}}</h2>
+          <p>{{order.qty}}</p>
+          <p>{{readableTimes(order.orderTimes)}}</p>
+          <p>{{order.orderReMark}}</p>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="DeleteItem(order);slideclose(itemsliding);"><ion-icon class="icon" name="trash"></ion-icon></button>
+      </ion-item-options>
+  
+      <ion-item-options side="right">
+        <button ion-button (click)="ViewDetail('OrderDetailPage',order);slideclose(itemsliding);"><ion-icon class="icon" name="menu"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>
+
+</ion-content>
